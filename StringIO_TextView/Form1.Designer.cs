@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtEdit = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -40,16 +40,16 @@
             this.txtEdit.Size = new System.Drawing.Size(231, 21);
             this.txtEdit.TabIndex = 0;
             // 
-            // button1
+            // btnEdit
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 60);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "입력";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEdit.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(13, 40);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(231, 60);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "입력";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblResult
             // 
@@ -67,11 +67,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 222);
             this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "문자 입출력";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,7 +81,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtEdit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblResult;
     }
 }
