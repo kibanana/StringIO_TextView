@@ -20,9 +20,10 @@ namespace StringIO_TextView
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (TextCheck())
+            if (TextCheck()==true)
             {
                 this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
+                this.txtEdit.Focus();
             } else
             {
                 
@@ -52,10 +53,10 @@ namespace StringIO_TextView
         {
             if (e.KeyChar == (char)13)
             {
-                if (TextCheck())
+                e.Handled = true;
+                if (TextCheck()==true)
                 {
                     this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
-                    e.Handled = true;
                 }
             }
         }
