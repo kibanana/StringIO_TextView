@@ -39,6 +39,8 @@
             this.txtEdit.Name = "txtEdit";
             this.txtEdit.Size = new System.Drawing.Size(231, 21);
             this.txtEdit.TabIndex = 0;
+            this.txtEdit.TextChanged += new System.EventHandler(this.txtEdit_TextChanged);
+            this.txtEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdit_KeyPress);
             // 
             // btnEdit
             // 

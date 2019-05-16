@@ -20,12 +20,49 @@ namespace StringIO_TextView
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
+            if (TextCheck())
+            {
+                this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
+            } else
+            {
+                
+            }
+        }
+
+        private bool TextCheck()
+        {
+            if(this.txtEdit.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("텍스트를 입력하세요!", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtEdit.Focus();
+                return false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.OrgStr = this.lblResult.Text;
+        }
+
+        private void txtEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (TextCheck())
+                {
+                    this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtEdit_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
